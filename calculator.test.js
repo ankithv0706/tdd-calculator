@@ -27,4 +27,12 @@ describe("TDD Calculator", () => {
     expect(calculator.add("//;\n1;2")).toBe(3);
     expect(calculator.add("//-\n3-2-1")).toBe(6);
   });
+  test("should throw error for negative numbers", () => {
+    expect(() => calculator.add("1,-2")).toThrow(
+      "Negative numbers not allowed: -2"
+    );
+    expect(() => calculator.add("1,-2,-3,4")).toThrow(
+      "Negative numbers not allowed: -2,-3"
+    );
+  });
 });

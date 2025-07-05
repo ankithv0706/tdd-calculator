@@ -9,6 +9,11 @@ class Calculator {
     }
 
     const nums = numbers.split(delimiter);
+    const negatives = nums.filter((n) => n < 0);
+    if (negatives.length > 0) {
+      throw new Error(`Negative numbers not allowed: ${negatives.join(",")}`);
+    }
+
     return nums.reduce((sum, num) => sum + parseInt(num), 0);
   }
 }
