@@ -13,4 +13,7 @@ describe("TDD Calculator", () => {
     expect(calculator.add("1")).toBe(1);
     expect(calculator.add("99")).toBe(99);
   });
+  test("should return sum for two numbers separated by comma", () => {
+    expect(calculator.add("1,2")).toBe(3);
+  });
 });
