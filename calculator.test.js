@@ -20,7 +20,11 @@ describe("TDD Calculator", () => {
     expect(calculator.add("1,2,3,4,5")).toBe(15);
     expect(calculator.add("100,24,35,42,54")).toBe(255);
   });
-  test("handles newlines as delimiters", () => {
+  test("should handle newlines as delimiters", () => {
     expect(calculator.add("1\n2,3")).toBe(6);
+  });
+  test("should supports custom single-character delimiter", () => {
+    expect(calculator.add("//;\n1;2")).toBe(3);
+    expect(calculator.add("//-\n3-2-1")).toBe(6);
   });
 });
